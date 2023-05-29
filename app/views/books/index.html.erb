@@ -1,92 +1,9 @@
-<!DOCTYPE html>
-<html>
-  <head>
+<% @books.each do |book| %>
+<%=link_to(book.content,"/books/#{book.id}") %>
+
+<h1>Booksindex</h1>
     <title>BooksIndex</title>
-  </head>
-
-  <body>
-<h1>Books</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-      <tr>
-        <td>リーダブルコード</td>
-        <td>より良いコードを書くためのシンプルで実践的なテクニック</td>
-        <td><a class="show_152342" href="/books/152342">Show</a></td>
-        <td><a class="edit_152342" href="/books/152342/edit">Edit</a></td>
-        <td><a data-confirm="Are you sure?" class="destroy_152342" rel="nofollow" data-method="delete" href="/books/152342">Destroy</a></td>
-      </tr>
-      <tr>
-        <td>トラブル知らずのシステム設計</td>
-        <td>システム設計の要点を図解で説明してくれます</td>
-        <td><a class="show_152343" href="/books/152343">Show</a></td>
-        <td><a class="edit_152343" href="/books/152343/edit">Edit</a></td>
-        <td><a data-confirm="Are you sure?" class="destroy_152343" rel="nofollow" data-method="delete" href="/books/152343">Destroy</a></td>
-      </tr>
-      <tr>
-        <td>たのしいRuby</td>
-        <td>Rubyの入門におすすめです</td>
-        <td><a class="show_152344" href="/books/152344">Show</a></td>
-        <td><a class="edit_152344" href="/books/152344/edit">Edit</a></td>
-        <td><a data-confirm="Are you sure?" class="destroy_152344" rel="nofollow" data-method="delete" href="/books/152344">Destroy</a></td>
-      </tr>
-      <tr>
-        <td>入門Git</td>
-        <td>gitについての基本操作から内部構造まで解説してくれます</td>
-        <td><a class="show_152345" href="/books/152345">Show</a></td>
-        <td><a class="edit_152345" href="/books/152345/edit">Edit</a></td>
-        <td><a data-confirm="Are you sure?" class="destroy_152345" rel="nofollow" data-method="delete" href="/books/152345">Destroy</a></td>
-      </tr>
-      <tr>
-        <td>アルゴリズム図鑑</td>
-        <td>アルゴリズムについてカラーイラストでしっかり解説してくれます</td>
-        <td><a class="show_152346" href="/books/152346">Show</a></td>
-        <td><a class="edit_152346" href="/books/152346/edit">Edit</a></td>
-        <td><a data-confirm="Are you sure?" class="destroy_152346" rel="nofollow" data-method="delete" href="/books/152346">Destroy</a></td>
-      </tr>
-      <tr>
-        <td>達人プログラマー</td>
-        <td>プログラマ入門者は必読！</td>
-        <td><a class="show_152347" href="/books/152347">Show</a></td>
-        <td><a class="edit_152347" href="/books/152347/edit">Edit</a></td>
-        <td><a data-confirm="Are you sure?" class="destroy_152347" rel="nofollow" data-method="delete" href="/books/152347">Destroy</a></td>
-      </tr>
-      <tr>
-        <td>データベース実践入門</td>
-        <td>効率的なSQL文を教えてくれます</td>
-        <td><a class="show_152348" href="/books/152348">Show</a></td>
-        <td><a class="edit_152348" href="/books/152348/edit">Edit</a></td>
-        <td><a data-confirm="Are you sure?" class="destroy_152348" rel="nofollow" data-method="delete" href="/books/152348">Destroy</a></td>
-      </tr>
-  </tbody>
-</table>
-
-
+ 
+      <h3>Title</h3>
+      <h3>Body</h3>
 <h2>New book</h2>
-<form class="new_book" id="new_book" action="/books" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="uYBt1k0CU+blF1BN/KsGyI74iNhjZaMTtLeR0Zey1xlXQx+SlJ3fssS/0t7dXNgGxa4vEYLvCD1dm8z7AJkT5A==" />
-
-  <div class="field">
-    <label for="book_title">Title</label>
-    <input class="book_title" type="text" name="book[title]" id="book_title" />
-  </div>
-
-  <div class="field">
-    <label for="book_body">Body</label>
-    <textarea class="book_body" name="book[body]" id="book_body">
-</textarea>
-  </div>
-
-  <div class="actions">
-    <input type="submit" name="commit" value="Create Book" data-disable-with="Create Book" />
-  </div>
-</form>
-  </body>
-</html>
